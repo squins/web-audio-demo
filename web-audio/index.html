@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Try out web audio api's</title>
+
+<script>
+    let audio = new Audio("sound.mp3");
+
+    audio.addEventListener("ended", function () {
+        alert("music ended")
+    })
+
+    function play() {
+        audio.play();
+    }
+
+    function toggleLooping() {
+        console.log(!audio.loop)
+        audio.loop = !audio.loop;
+    }
+
+    function changeVolume(value){
+        console.log(value)
+        let volumeF = value / 10;
+        console.log(volumeF)
+
+        audio.volume = volumeF
+    }
+
+    function pause(){
+        audio.pause()
+    }
+
+    function resume(){
+        audio.play()
+    }
+
+    function stop(){
+        audio.pause()
+        audio.currentTime = 0
+    }
+
+</script>
+</head>
+<body>
+
+
+
+<button onclick="play()">play</button>
+<br>
+<label for="volume">Volume</label><input id="volume" type="range" min="0" max="10" value="5" onchange="changeVolume(value)">
+<br>
+<label for="looping">Loop:</label><input type="checkbox" id="looping" onchange="toggleLooping()"/>
+<br>
+<button onclick="pause()">pause</button>
+<br>
+<button onclick="resume()">resume</button>
+<br>
+<button onclick="stop()">stop</button>
+
+</body>
+</html>

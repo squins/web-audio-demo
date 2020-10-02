@@ -1,0 +1,90 @@
+
+numbers.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,Linear
+repeat: none
+common/background
+  rotate: false
+  xy: 8, 1002
+  size: 978, 733
+  orig: 978, 733
+  offset: 0, 0
+  index: -1
+common/eight
+  rotate: false
+  xy: 385, 8
+  size: 301, 489
+  orig: 489, 489
+  offset: 94, 0
+  index: -1
+common/five
+  rotate: false
+  xy: 994, 1246
+  size: 425, 489
+  orig: 489, 489
+  offset: 32, 0
+  index: -1
+common/four
+  rotate: false
+  xy: 694, 112
+  size: 315, 489
+  orig: 489, 489
+  offset: 87, 0
+  index: -1
+common/nine
+  rotate: false
+  xy: 1303, 749
+  size: 299, 489
+  orig: 489, 489
+  offset: 95, 0
+  index: -1
+common/one
+  rotate: false
+  xy: 1610, 749
+  size: 245, 489
+  orig: 489, 489
+  offset: 122, 0
+  index: -1
+common/seven
+  rotate: false
+  xy: 1791, 1246
+  size: 247, 489
+  orig: 489, 489
+  offset: 121, 0
+  index: -1
+common/six
+  rotate: false
+  xy: 8, 505
+  size: 447, 489
+  orig: 489, 489
+  offset: 21, 0
+  index: -1
+common/ten
+  rotate: false
+  xy: 463, 609
+  size: 489, 385
+  orig: 489, 489
+  offset: 0, 52
+  index: -1
+common/three
+  rotate: false
+  xy: 994, 749
+  size: 301, 489
+  orig: 489, 489
+  offset: 94, 0
+  index: -1
+common/two
+  rotate: false
+  xy: 1427, 1246
+  size: 356, 489
+  orig: 489, 489
+  offset: 67, 0
+  index: -1
+common/zero
+  rotate: false
+  xy: 8, 8
+  size: 369, 489
+  orig: 489, 489
+  offset: 60, 0
+  index: -1
