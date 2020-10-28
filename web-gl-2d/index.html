@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Try out web shader api's</title>
+</head>
+<body>
+<p>Image to draw:</p>
+<img id="source" src="../web-gl-image/badlogic.jpg">
+
+<p>2D Context</p>
+<canvas id="twoDCanvas" width="640" height="480"></canvas>
+
+<br><br><br><br><br><br><br><br>
+
+<p>WebGL Context</p>
+<canvas id="glCanvas" width="640" height="480"></canvas>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/gl-matrix@3/gl-matrix.js"></script>
+<script>
+    main();
+
+    function main() {
+        const canvas = document.querySelector("#glCanvas");
+        const glContext = canvas.getContext("webgl", {preserveDrawingBuffer: true})
+
+        const canvas1 = document.querySelector("#twoDCanvas");
+        const twoDContext = canvas1.getContext("2d");
+
+        let webGLImage = new Image()
+        const img = new Image();
+        img.src = '/web-audio-demo/web-demo/web-gl-2d/badlogic.jpg'
+        img.onload = function (e){
+            webGLImage = img
+            twoDContext.drawImage(img, 10, 10, 256, 256)
+            console.log("img")
+        }
+
+        console.log(twoDContext.canvas.getContext)
+        console.log(twoDContext.canvas)
+
+        setTimeout(copy, 2000)
+
+        function copy() {
+            const texture = glContext.createTexture();
+            glContext.bindTexture(glContext.TEXTURE_2D, texture)
+            glContext.texImage2D(glContext.TEXTURE_2D, 0, glContext.RGB, glContext.RGB, glContext.UNSIGNED_BYTE, twoDContext.canvas)
+            glContext.clearColor(1, 1, 0, 1)
+            glContext.clear(glContext.COLOR_BUFFER_BIT)
+            console.log("After copy")
+        }
+    }
+
+</script>
+</html>
